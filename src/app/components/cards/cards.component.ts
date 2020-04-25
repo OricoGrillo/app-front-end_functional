@@ -11,6 +11,7 @@ export class CardsComponent implements OnInit {
   // variables de entrada para pasarse variables entre componentes.
   @Input() products: ProductModel2[];
   @Input() category: string = '';
+  @Input() criterio: string = '';
   @Output() onClickRedirect: EventEmitter<number> = new EventEmitter();
 
   constructor() { }

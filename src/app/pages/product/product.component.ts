@@ -10,7 +10,7 @@ import { ProductModel2 } from 'src/app/models/modelsProductos';
 })
 export class ProductComponent implements OnInit {
 
-  product: ProductModel2[] = [];
+  product: ProductModel2;
   category: string = '';
   criterio: string = '';
 
@@ -20,8 +20,8 @@ export class ProductComponent implements OnInit {
       this.category = params['category'];
       this.criterio = params['criterio'];
 
-      this.productSvc.getByCode(code).subscribe((data: ProductModel2[]) => {
-        //console.log(data);
+      this.productSvc.getByCode(code).subscribe((data: ProductModel2) => {
+        console.log(data);
         this.product = data;
       })
     })
